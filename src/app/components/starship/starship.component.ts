@@ -19,7 +19,7 @@ export class StarshipComponent implements OnInit {
 
   ngOnInit() {
     const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = '../../../assets/images/starships/' + ITEM + '.jpg';
+    this.imgUrl = './assets/images/starships/' + ITEM + '.jpg';
     this.starWarsSvc.getStarship(ITEM)
     .then(result => {
       this.starship = result;

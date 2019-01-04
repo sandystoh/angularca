@@ -18,7 +18,7 @@ export class VehicleComponent implements OnInit {
 
   ngOnInit() {
     const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = '../../../assets/images/vehicles/' + ITEM + '.jpg';
+    this.imgUrl = './assets/images/vehicles/' + ITEM + '.jpg';
     this.starWarsSvc.getVehicle(ITEM)
     .then(result => {
       this.vehicle = result;

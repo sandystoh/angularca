@@ -17,7 +17,7 @@ export class SpeciesComponent implements OnInit {
 
   ngOnInit() {
     const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = '../../../assets/images/species/' + ITEM + '.jpg';
+    this.imgUrl = './assets/images/species/' + ITEM + '.jpg';
     this.starWarsSvc.getSpecies(ITEM)
     .then(result => {
       this.species = result;

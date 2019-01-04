@@ -18,7 +18,7 @@ export class PlanetComponent implements OnInit {
 
     ngOnInit() {
       const ITEM = this.activatedRoute.snapshot.params.item;
-      this.imgUrl = '../../../assets/images/planets/' + ITEM + '.jpg';
+      this.imgUrl = './assets/images/planets/' + ITEM + '.jpg';
       this.starWarsSvc.getPlanet(ITEM)
       .then(result => {
         this.planet = result;

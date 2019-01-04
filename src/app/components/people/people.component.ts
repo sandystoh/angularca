@@ -18,7 +18,7 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit() {
     const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = '../../../assets/images/people/' + ITEM + '.jpg';
+    this.imgUrl = './assets/images/people/' + ITEM + '.jpg';
     this.starWarsSvc.getPerson(ITEM)
     .then(result => {
       this.char = result;

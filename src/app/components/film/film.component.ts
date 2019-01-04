@@ -20,7 +20,7 @@ export class FilmComponent implements OnInit {
 
   ngOnInit() {
     const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = '../../../assets/images/films/' + ITEM + '.jpg';
+    this.imgUrl = './assets/images/films/' + ITEM + '.jpg';
     this.starWarsSvc.getFilm(ITEM)
     .then(result => {
       this.film = result;
