@@ -1,0 +1,23 @@
+h1{
+    color: #fff;
+}
+.list{
+    text-align: center;
+}
+
+.main{
+    padding: 10px 0px;
+}
+
+.card{
+    color: #fff;
+    background-color:#333;
+    cursor: pointer;
+    height: 30px;
+    margin: 10px;
+}
+
+.backbtn{
+    font-weight: 700;
+    margin-left: 20px;
+}

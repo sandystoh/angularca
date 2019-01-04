@@ -1,0 +1,26 @@
+
+<div class="imgarea">
+  <img src ="{{imgUrl}}" class="coverImg">
+</div>
+<div class="titlearea" *ngIf = "char">
+<h2>{{ char.name }}</h2>
+</div>
+
+<div  *ngIf = "char">
+<table>
+<tbody>
+    <tr><td>Gender</td><td>{{ char.gender }}</td></tr>
+    <tr><td>Birth Year</td><td>{{ char.birth_year }}</td></tr>
+    <tr><td>Species</td><td><div *ngFor="let s of char.p_species; let isLast=last">{{ s.name }}{{isLast ? '' : ', '}}</div></td></tr>
+    <tr><td>Homeworld</td><td *ngIf="char.p_homeworld">{{ char.p_homeworld.name }}</td></tr>
+    <tr><td>Height</td><td>{{ char.height }}</td></tr>
+    <tr><td>Mass</td><td>{{ char.mass }}</td></tr>
+    <tr><td>Skin Color</td><td>{{ char.skin_color }}</td></tr>
+    <tr><td>Hair Color</td><td>{{ char.hair_color }}</td></tr>
+    <tr><td>Eye Color</td><td>{{ char.eye_color }}</td></tr>
+    <tr><td>Starships</td><td><div *ngFor="let st of char.p_starships; let isLast=last">{{ st.name }}{{isLast ? '' : ', '}}</div></td></tr>
+    <tr><td>Vehicles</td><td><div *ngFor="let v of char.p_vehicles; let isLast=last">{{ v.name }}{{isLast ? '' : ', '}}</div></td></tr>
+    <tr><td>Films</td><td><div *ngFor="let f of orderFilms('episode_id'); let isLast=last">{{ f.title }}{{isLast ? '' : ', '}}</div></td></tr>
+</tbody>
+</table>
+</div>

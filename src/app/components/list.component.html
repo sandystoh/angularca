@@ -1,0 +1,16 @@
+<button color="accent" (click)="goBack()"  class="backbtn" mat-button mat-raised-button>BACK</button>
+<div class="list">
+<h1>{{ category }}</h1>
+<button [disabled]="(list['previous'] == null)" (click)="goPrevious()"  color="primary" mat-raised-button>PREVIOUS</button>&nbsp;
+<button [disabled]="(list['next'] == null)" (click)="goNext()" color="primary" mat-raised-button>NEXT</button>
+
+<div class= "main">
+<mat-card class="card" *ngFor="let i of items" (click)="getDetails(i['url'])">
+  <h4 *ngIf="i['name']"> {{ i['name'] }}</h4>
+  <h4 *ngIf="i['title']"> {{ i['title'] }} </h4>
+</mat-card>
+</div>
+
+<button [disabled]="(list['previous'] == null)" (click)="goPrevious()"  color="primary" mat-raised-button>PREVIOUS</button>&nbsp;
+<button [disabled]="(list['next'] == null)" (click)="goNext()"  color="primary" mat-raised-button>NEXT</button>
+</div>div>

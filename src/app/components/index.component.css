@@ -1,0 +1,12 @@
+.swcard{
+    margin: 10px;
+}
+
+.swcard a{
+    text-decoration: none;
+    color: black;
+}
+
+.swcard a:hover{
+    color: #00B2FF;
+}

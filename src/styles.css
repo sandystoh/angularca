@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body{
+    background-color: #000;
+    font-family: 'Lato', sans-serif;
+}
+
+.mat-toolbar.mat-primary {
+  background: #000 !important;
+  color: #fff;
+}

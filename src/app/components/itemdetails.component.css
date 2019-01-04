@@ -1,0 +1,50 @@
+.imgarea {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coverImg {
+    margin: 10px 0px;
+    width: 500px;
+}
+
+.titlearea {
+    text-align: center;
+    margin: 10px;
+    width: 100%;
+}
+
+h2 {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+table {
+    margin: 0 auto;
+    width: 100vw;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+td {
+    padding: 5px;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #333;
+}
+
+.backbtn{
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.crawlarea {
+    color: yellow;
+    text-align: center;
+}
+
+@media only screen and (max-width : 500px) {
+    .coverImg {
+        width: 100vw;
+    }
+}
