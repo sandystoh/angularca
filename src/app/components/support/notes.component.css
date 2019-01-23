@@ -1,0 +1,61 @@
+
+.notesarea {
+    color: #fff;
+    margin: 10px;
+}
+
+.formarea {
+    text-align: center;
+}
+
+.add-item {
+    font-size: 1rem; 
+    line-height: 1;
+    margin-right: 5px;
+    margin-left: 30px;
+}
+
+.icon {
+    color: black;
+    font-size: 1rem;
+}
+
+mat-form-field {
+    width: 70%;
+  }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline,
+::ng-deep mat-form-field .mat-hint,
+::ng-deep mat-form-field input,
+::ng-deep mat-form-field .mat-form-field-label,
+::ng-deep .placeholder {
+          color: white;
+       }
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #ffcc00;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    border-top: 3px dashed #333;
+    border-bottom: 3px dashed #333;
+}
+
+td {
+    padding: 5px;
+    color: #fff;
+}
+
+.comment:hover {
+    background-color: #333;
+}
+
+.red {
+    background-color: red;
+    font-size: 1rem;
+}

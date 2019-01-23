@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StarWarsService } from '../../starwars.service';
+import { StarWarsService } from '../../services/starwars.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Planet } from 'src/app/model';
 
@@ -12,18 +12,20 @@ export class PlanetComponent implements OnInit {
 
     planet: Planet;
     imgUrl: any;
+    item: any;
 
     constructor(private starWarsSvc: StarWarsService,
       private router: Router, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
-      const ITEM = this.activatedRoute.snapshot.params.item;
-      this.imgUrl = './assets/images/planets/' + ITEM + '.jpg';
-      this.starWarsSvc.getPlanet(ITEM)
+      this.item = this.activatedRoute.snapshot.params.item;
+      this.imgUrl = './assets/images/planets/' + this.item + '.jpg';
+      this.starWarsSvc.getPlanet(this.item)
       .then(result => {
         this.planet = result;
      })
       .catch(error => {
+        this.router.navigate(['/error']);
         console.error('ERROR: ', error);
      });
     }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StarWarsService } from '../../starwars.service';
+import { StarWarsService } from '../../services/starwars.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { People } from 'src/app/model';
 
@@ -12,18 +12,21 @@ export class PeopleComponent implements OnInit {
 
   char: People;
   imgUrl: any;
+  item: any;
 
   constructor(private starWarsSvc: StarWarsService,
     private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    const ITEM = this.activatedRoute.snapshot.params.item;
-    this.imgUrl = './assets/images/people/' + ITEM + '.jpg';
-    this.starWarsSvc.getPerson(ITEM)
+    this.item = this.activatedRoute.snapshot.params.item;
+    this.imgUrl = './assets/images/people/' + this.item + '.jpg';
+
+    this.starWarsSvc.getPerson(this.item)
     .then(result => {
       this.char = result;
    })
     .catch(error => {
+      this.router.navigate(['/error']);
       console.error('ERROR: ', error);
    });
   }

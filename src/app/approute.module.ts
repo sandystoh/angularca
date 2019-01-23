@@ -9,11 +9,15 @@ import { SpeciesComponent } from './components/species/species.component';
 import { StarshipComponent } from './components/starship/starship.component';
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { PlanetComponent } from './components/planet/planet.component';
+import { NotesComponent } from './components/support/notes.component';
+import { ErrorComponent } from './components/support/error.component';
 
 
 const ROUTES: Routes = [
     { path: '', component: IndexComponent},
+    { path: 'error', component: ErrorComponent},
     { path: 'list/:cat', component: ListComponent},
+    { path: 'notes', component: NotesComponent},
     { path: 'details', component: ItemdetailsComponent,
     children: [
       { path: 'people/:item', component: PeopleComponent },

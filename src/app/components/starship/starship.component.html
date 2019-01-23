@@ -2,10 +2,20 @@
 <div class="imgarea">
     <img src ="{{imgUrl}}" class="coverImg">
   </div>
+  <div *ngIf="!starship"
+  style="display: flex; justify-content: center; align-items: center">
+ <mat-progress-spinner 
+   color="accent"
+   mode="indeterminate">
+ </mat-progress-spinner>
+</div>
   <div class="titlearea" *ngIf = "starship">
   <h2>{{ starship.name }}</h2>
+  <div *ngIf="starship">
+    <app-share category="starships" [text]="starship.name" [itemID]="item"></app-share>
   </div>
-  
+  </div>
+
   <div  *ngIf = "starship">
   <table>
   <tbody>
@@ -25,4 +35,11 @@
       <tr><td>Films</td><td><div *ngFor="let f of orderFilms('episode_id'); let isLast=last">{{ f.title }}{{isLast ? '' : ', '}}</div></td></tr>
   </tbody>
   </table>
+  </div>
+
+  <div>
+        <div class="titlearea">
+          <h4>My Notes</h4>
+        </div>
+        <app-notes category="starships" [itemID]="item"></app-notes>
   </div>

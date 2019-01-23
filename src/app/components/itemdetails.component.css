@@ -4,14 +4,16 @@
 }
 
 .coverImg {
-    margin: 10px 0px;
-    width: 500px;
+    margin: 10px auto;
+    width: 95vw;
+    max-width: 500px;
 }
 
 .titlearea {
     text-align: center;
     margin: 10px;
     width: 100%;
+    color: #fff;
 }
 
 h2 {
@@ -20,7 +22,7 @@ h2 {
 }
 table {
     margin: 0 auto;
-    width: 100vw;
+    width: 95vw;
     text-align: center;
     font-family: 'Lato', sans-serif;
 }

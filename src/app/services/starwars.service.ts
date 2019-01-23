@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { List, People, Film, Species, Planet, Starship, Vehicle } from './model';
+import { List, People, Film, Species, Planet, Starship, Vehicle } from '../model';
 
 const SWAPI = 'https://swapi.co/api/';
 
@@ -9,7 +9,7 @@ export class StarWarsService {
 
     constructor(private http: HttpClient) { }
 
-    getList(API_URL): Promise<List[]>{
+    getList(API_URL): Promise<List[]> {
         return (
             this.http.get<List[]>(API_URL)
             .toPromise()

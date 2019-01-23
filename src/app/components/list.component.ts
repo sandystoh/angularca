@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { StarWarsService } from '../starwars.service';
+import { StarWarsService } from '../services/starwars.service';
 import { List, People } from '../model';
 
 const SWAPI = 'https://swapi.co/api/';
@@ -17,6 +17,7 @@ export class ListComponent implements OnInit {
   list: List[] = [];
   items: Object[] = [];
   category: string;
+  isLoading = true;
 
   constructor(private starWarsSvc: StarWarsService,
   private router: Router, private activatedRoute: ActivatedRoute) { }
@@ -34,8 +35,10 @@ export class ListComponent implements OnInit {
         console.log('Listm: ', result);
           this.list = result;
           this.items = this.list['results'];
+          this.isLoading = false;
       })
       .catch(error => {
+        this.router.navigate(['/error']);
         console.error('ERROR: ', error);
      });
   }

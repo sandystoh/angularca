@@ -2,8 +2,18 @@
 <div class="imgarea">
   <img src ="{{imgUrl}}" class="coverImg">
 </div>
+<div *ngIf="!char"
+style="display: flex; justify-content: center; align-items: center">
+<mat-progress-spinner 
+ color="accent"
+ mode="indeterminate">
+</mat-progress-spinner>
+</div>
 <div class="titlearea" *ngIf = "char">
 <h2>{{ char.name }}</h2>
+<div *ngIf="char">
+  <app-share category="people" [text]="char.name" [itemID]="item"></app-share>
+</div>
 </div>
 
 <div  *ngIf = "char">
@@ -23,4 +33,11 @@
     <tr><td>Films</td><td><div *ngFor="let f of orderFilms('episode_id'); let isLast=last">{{ f.title }}{{isLast ? '' : ', '}}</div></td></tr>
 </tbody>
 </table>
+</div>
+
+<div>
+  <div class="titlearea">
+    <h4>My Notes</h4>
+  </div>
+  <app-notes category="people" [itemID]="item"></app-notes>
 </div>

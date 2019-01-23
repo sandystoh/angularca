@@ -5,6 +5,13 @@
 <button [disabled]="(list['next'] == null)" (click)="goNext()" color="primary" mat-raised-button>NEXT</button>
 
 <div class= "main">
+    <div *ngIf="isLoading"
+    style="display: flex; justify-content: center; align-items: center">
+   <mat-progress-spinner 
+     color="accent"
+     mode="indeterminate">
+   </mat-progress-spinner>
+  </div>
 <mat-card class="card" *ngFor="let i of items" (click)="getDetails(i['url'])">
   <h4 *ngIf="i['name']"> {{ i['name'] }}</h4>
   <h4 *ngIf="i['title']"> {{ i['title'] }} </h4>

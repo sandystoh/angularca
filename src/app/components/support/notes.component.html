@@ -1,0 +1,25 @@
+<div class="notesarea">
+    <div class="formarea"><form>
+    
+       <mat-form-field appearance="outline" class="add-item">
+      <input matInput placeholder="Add Comment" name="comment" [(ngModel)]="comment">
+      <mat-hint>Add Comment</mat-hint>
+    </mat-form-field> 
+    <button mat-mini-fab color="accent" type="button" (click)="addComment()"><i class="fas fa-plus icon"></i>
+      </button>
+    </form>
+  </div>
+<table>
+  <tbody>
+    <tr *ngFor="let n of personNotes">
+      <td style="width: 30px;"><i class="fas fa-comment"></i></td>
+      <td class="comment">{{ n.comment }}</td>
+      <td style="width: 30px; text-align: center"> 
+        <button mat-mini-fab class="red"  (click)="deleteComment(n.id)"><i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

@@ -2,8 +2,18 @@
 <div class="imgarea">
     <img src ="{{imgUrl}}" class="coverImg">
   </div>
+  <div *ngIf="!film"
+  style="display: flex; justify-content: center; align-items: center">
+ <mat-progress-spinner 
+   color="accent"
+   mode="indeterminate">
+ </mat-progress-spinner>
+</div>
   <div class="titlearea" *ngIf = "film">
   <h2>{{ film.title }}</h2>
+   <div *ngIf="film">
+    <app-share category="films" [text]="film.title" [itemID]="item"></app-share>
+  </div>
   </div>
   <div class="crawlarea" *ngIf = "film">
     <h5>{{ film.opening_crawl }}</h5>
@@ -22,4 +32,11 @@
       <tr><td>Planets</td><td><div *ngFor="let p of film.f_planets let isLast=last">{{ p.name }}{{isLast ? '' : ', '}}</div></td></tr>
   </tbody>
   </table>
+  </div>
+  
+  <div>
+      <div class="titlearea">
+        <h4>My Notes</h4>
+      </div>
+      <app-notes category="films" [itemID]="item"></app-notes>
   </div>
